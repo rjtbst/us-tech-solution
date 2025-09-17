@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16">
       {/* Hero Section */}
-      <div className="px-20">
+      <div className="md:px-20">
         <HeroSection />
       </div>
 
@@ -34,17 +34,17 @@ export default function Home() {
         <Brand />
       </ScrollReveal>
 
-        <ScrollReveal delay={0.1} className="px-20 ">
+        <ScrollReveal delay={0.1} className="md:px-20 ">
         <WhatWeDo />
       </ScrollReveal>
 
       {/* Services Section */}
-      <ScrollReveal className="px-20 flex flex-col items-center justify-center" delay={0.1}>
+      <ScrollReveal className="md:px-20 flex flex-col items-center justify-center" delay={0.1}>
         <ServicesSection />
       </ScrollReveal>
 
       {/* About Section */}
-      <ScrollReveal className="px-20" delay={0.2}>
+      <ScrollReveal className="md:px-20" delay={0.2}>
         <AboutSection />
       </ScrollReveal>
 
