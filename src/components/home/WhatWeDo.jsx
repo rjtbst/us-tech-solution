@@ -43,21 +43,21 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   hover: { scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" },
 };
 
 const WhatWeDo = () => {
   return (
-    <section id="whatWeDo" className=" bg-gray-50">
+    <section id="whatWeDo" className="w-full overflow-hidden">
       {/* Intro */}
       <motion.div
-        className="md:w-[60%] flex flex-col gap-6 mb-12"
-        initial={{ opacity: 0, x: -50 }}
+        className="md:w-[60%] flex flex-col gap-6 mb-12 ml-4 md:ml-2"
+        initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
       >
         <h3 className="text-gray-500 uppercase tracking-wide">What we do</h3>
         <h1 className="text-xl md:text-5xl font-semibold">
@@ -74,7 +74,7 @@ const WhatWeDo = () => {
 
       {/* Services Grid */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-10"
+        className="grid grid-cols-1 md:grid-cols-3 py-10 gap-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -90,7 +90,7 @@ const WhatWeDo = () => {
             <img
               src={service.img}
               alt={service.title}
-              className="w-full h-[60vh] object-cover"
+              className="w-full h-[50vh] object-cover"
             />
             <div className="p-6 flex flex-col gap-4">
               <h2 className="text-xl font-semibold">{service.title}</h2>

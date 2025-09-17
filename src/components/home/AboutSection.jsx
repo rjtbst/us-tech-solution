@@ -37,7 +37,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="about" ref={ref} className="bg-background">
+    <section id="about" ref={ref} className="w-full overflow-hidden bg-background">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
