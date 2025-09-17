@@ -1,42 +1,34 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand */
+  --color-brand: #3b82f6;   /* calm blue, feels modern + minimal */
+
+  /* Neutrals */
+  --color-bg: #ffffff;
+  --color-surface: #f9fafb;
+  --color-text: #111827;
+  --color-muted: #6b7280;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+  will-change: transform;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* perspective for 3D hover */
+.perspective-1000 {
+  perspective: 1000px;
 }
