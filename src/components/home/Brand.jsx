@@ -47,7 +47,7 @@ const Brand = () => {
         Our Partners
       </h2>
 
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full ">
         {/* Scrolling track */}
         <motion.div
           className="flex gap-16 w-max"
