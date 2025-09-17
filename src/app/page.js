@@ -11,7 +11,7 @@ import WhatWeDo from "@/components/home/WhatWeDo";
 // 🔹 Reusable scroll animation wrapper
  const ScrollReveal = ({ children, delay = 0, className = "" }) => {
 return(  <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 80 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.2, ease: "easeOut", delay }}
     viewport={{ once: false, amount: 0.2 }}
@@ -39,12 +39,12 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Services Section */}
-      <ScrollReveal className="md:px-20 flex flex-col items-center justify-center" delay={0.1}>
+      <ScrollReveal className="md:px-20  flex flex-col items-center justify-center" delay={0.1}>
         <ServicesSection />
       </ScrollReveal>
 
       {/* About Section */}
-      <ScrollReveal className="md:px-20" delay={0.2}>
+      <ScrollReveal className="md:px-20 " delay={0.2}>
         <AboutSection />
       </ScrollReveal>
 
