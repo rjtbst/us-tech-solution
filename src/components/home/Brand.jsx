@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useAnimation } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const logos = [
   "/assets/about-image.jpg",
@@ -16,17 +16,29 @@ const Brand = () => {
   const controls = useAnimation();
   const [isPaused, setIsPaused] = useState(false);
 
-  const handleMouseEnter = () => {
+  // Start animation immediately (for mobile + desktop)
+  useEffect(() => {
+    controls.start({
+      x: ["0%", "-50%"],
+      transition: { repeat: Infinity, duration: 20, ease: "linear" },
+    });
+  }, [controls]);
+
+  const pauseAnimation = () => {
     setIsPaused(true);
-    controls.stop(); // stop animation instantly
+    controls.stop();
   };
 
-  const handleMouseLeave = () => {
+  const resumeAnimation = () => {
     setIsPaused(false);
     controls.start({
       x: ["0%", "-50%"],
       transition: { repeat: Infinity, duration: 20, ease: "linear" },
     });
+  };
+
+  const toggleMobilePause = () => {
+    isPaused ? resumeAnimation() : pauseAnimation();
   };
 
   return (
@@ -45,15 +57,16 @@ const Brand = () => {
           {[...logos, ...logos].map((logo, index) => (
             <motion.div
               key={index}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={pauseAnimation}   // desktop hover
+              onMouseLeave={resumeAnimation}  // desktop hover out
+              onClick={toggleMobilePause}     // mobile tap to pause/resume
               whileHover={{
                 scale: 1.6,
                 rotateY: 25,
                 z: 100,
                 transition: { type: "spring", stiffness: 200, damping: 15 },
               }}
-              className="flex-shrink-0 w-xs h-xs flex items-center justify-center perspective-1000"
+              className="flex-shrink-0 w-32 h-32 flex items-center justify-center"
               style={{ perspective: 1000 }}
             >
               <motion.img
