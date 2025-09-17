@@ -8,7 +8,7 @@ import AboutSection from "@/components/home/AboutSection";
 import { motion } from "framer-motion";
 import WhatWeDo from "@/components/home/WhatWeDo";
 
-// 🔹 Reusable scroll animation wrapper
+// 🔹 Reusable scroll animation 
  const ScrollReveal = ({ children, delay = 0, className = "" }) => {
 return(  <motion.div
     initial={{ opacity: 0, y: 80 }}
